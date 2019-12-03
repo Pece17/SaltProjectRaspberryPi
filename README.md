@@ -57,6 +57,33 @@ We use the following command to find out our current dynamic IPv4 (Internet Prot
 hostname -I
 ```
 
+Create a new user ```chief``` for security reasons, since we don't want to use the default root user ```pi```
+
+```
+sudo adduser chief
+```
+
+The following output appears and we need to assign a new password and repeat it - we press ```Enter``` for empty for all other values, and finally press ```Ỳ``` to confirm the information
+
+```
+Adding user `chief' ...
+Adding new group `chief' (1001) ...
+Adding new user `chief' (1001) with group `chief' ...
+Creating home directory `/home/chief' ...
+Copying files from `/etc/skel' ...
+Uusi salasana: 
+Anna uudelleen uusi salasana: 
+passwd: salasanan päivitys onnistui
+Muutetaan käyttäjän chief tietoja
+Syötä uusi arvo tai paina ENTER jättääksesi oletuksen
+	Koko nimi []: 
+	Huonenumero []: 
+	Työpuhelin []: 
+	Kotipuhelin []: 
+	Muu []: 
+Is the information correct? [Y/n]
+```
+
 
 
 
