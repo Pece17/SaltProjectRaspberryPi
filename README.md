@@ -140,13 +140,9 @@ Reboot the system
 sudo reboot
 ```
 
-Logout of root user ```pi```
+If the log in screen opens after rebooting, log in using user ```chief```
 
-```
-logout
-```
-
-Login as user ```chief```
+If the log in screen does not open automatically and opens the root user ```pi``` desktop instead, open the terminal and log in manually as user ```chief```
 
 ```
 su - chief
@@ -167,8 +163,14 @@ sudo rm -vf /etc/sudoers.d/010_pi-nopasswd
 
 ## 1.3. Installing Salt Master on Raspberry Pi
 
-Install both Salt Master and Salt Minion
+Install Salt Master
 
 ```
-sudo apt-get install -y salt-master salt-minion
+sudo apt-get -y install salt-master
+```
+
+Install Salt Minion
+
+```
+sudo apt-get -y install salt-minion
 ```
