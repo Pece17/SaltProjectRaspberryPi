@@ -110,7 +110,7 @@ for GROUP in $(groups pi | sed -e 's/^pi //'); do
 sudo adduser chief $GROUP; done
 ```
 
-Add ```nopasswd``` rules to the following directory
+Copy ```nopasswd``` rules from root user ```pi``` to user ```chief```
 
 ```
 sudo cp /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_chief-nopasswd
@@ -140,7 +140,7 @@ Reboot the system
 sudo reboot
 ```
 
-If the log in screen opens after rebooting, log in using user ```chief```
+If the log in screen opens after rebooting, log in as user ```chief```
 
 If the log in screen does not open automatically and opens the root user ```pi``` desktop instead, open the terminal and log in manually as user ```chief```
 
