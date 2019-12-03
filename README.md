@@ -16,7 +16,7 @@ First we formatted the SD card so that we would have a clean slate starting this
 
 We downloaded ```Raspbian Buster with desktop``` from address https://www.raspberrypi.org/downloads/raspbian/ to a Windows workstation and created the image of the OS to an SD card with ```Rufus 3.8``` that we downloaded from address https://rufus.ie/
 
-http://myy.haaga-helia.fi/~bgg135/kuvat/Rufus_screenshot.JPG
+<img src="http://myy.haaga-helia.fi/~bgg135/kuvat/Rufus_screenshot.JPG">
 
 We then hooked up the Raspberry Pi to a monitor and LAN cable in Servula and the desktop view opened
 
