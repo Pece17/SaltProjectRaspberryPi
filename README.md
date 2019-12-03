@@ -16,6 +16,8 @@ First we formatted the SD card so that we would have a clean slate starting this
 
 We downloaded ```Raspbian Buster with desktop``` from address https://www.raspberrypi.org/downloads/raspbian/ to a Windows workstation and created the image of the OS to an SD card with ```Rufus 3.8``` that we downloaded from address https://rufus.ie/
 
+http://myy.haaga-helia.fi/~bgg135/kuvat/Rufus_screenshot.JPG
+
 We then hooked up the Raspberry Pi to a monitor and LAN cable in Servula and the desktop view opened
 
 We opened the terminal with ```Ctrl + Alt + T``` and updated package lists for upgrades and new packages from repositories
@@ -63,7 +65,7 @@ Create a new user ```chief``` for security reasons, since we don't want to use t
 sudo adduser chief
 ```
 
-The following output appears and we need to assign a new password and repeat it - we press ```Enter``` for empty for all other values, and finally press ```Ỳ``` to confirm the information
+The following output appears and we need to assign a new password and repeat it - we press ```Enter``` for empty for all other values, and finally press ```Y``` to confirm the information
 
 ```
 Adding user `chief' ...
@@ -84,7 +86,10 @@ Syötä uusi arvo tai paina ENTER jättääksesi oletuksen
 Is the information correct? [Y/n]
 ```
 
-
+```
+for GROUP in $(groups pi | sed -e 's/^pi //'); do
+sudo adduser chief $GROUP; done
+```
 
 
 
