@@ -122,13 +122,13 @@ Give the following command related to ```nopasswd``` rules
 sudo chmod u+w /etc/sudoers.d/010_chief-nopasswd
 ```
 
-Give the following command ```nopasswd``` rules
+Give the following command related to ```nopasswd``` rules
 
 ```
 sudo sed -i 's/pi/chief/g' /etc/sudoers.d/010_chief-nopasswd
 ```
 
-Give the following command ```nopasswd``` rules
+Give the following command related to ```nopasswd``` rules
 
 ```
 sudo chmod u-w /etc/sudoers.d/010_chief-nopasswd
