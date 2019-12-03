@@ -14,7 +14,11 @@ Salt project for Linux Server Management course in Haaga-Helia University of App
 
 First we formatted the SD card so that we would have a clean slate starting this project
 
-We downloaded ```Raspbian Buster with desktop``` from address https://www.raspberrypi.org/downloads/raspbian/ to a Windows workstation and created the image of the OS to an SD card with ```Rufus 3.8``` that we downloaded from address https://rufus.ie/
+We downloaded ```Raspbian Buster with desktop``` from address https://www.raspberrypi.org/downloads/raspbian/ to a Windows workstation 
+
+<img src="http://myy.haaga-helia.fi/~bgg135/kuvat/Raspian_buster_image.JPG">
+
+Then we created the image of the OS (Operating system) to an SD card with ```Rufus 3.8``` that we downloaded from address https://rufus.ie/
 
 <img src="http://myy.haaga-helia.fi/~bgg135/kuvat/Rufus_screenshot.JPG">
 
@@ -32,7 +36,7 @@ We then upgraded all the existing packages to newer versions
 sudo apt-get upgrade
 ```
 
-We find out the OS (Operating system) with this command
+We find out the OS with this command
 
 ```
 cat /etc/os-release
