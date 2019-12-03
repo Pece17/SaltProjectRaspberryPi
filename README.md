@@ -117,6 +117,17 @@ sudo chmod u-w /etc/sudoers.d/010_chief-nopasswd
 sudo reboot
 ```
 
+```
+sudo deluser -remove-home pi
+```
+
+```
+sudo rm -vf /etc/sudoers.d/010_pi-nopasswd
+```
+
+```
+sudo raspi-config
+```
 
 
 # 2. 
