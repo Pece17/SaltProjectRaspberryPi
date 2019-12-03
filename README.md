@@ -237,7 +237,43 @@ To                         Action      From
 ```
 
 
-## 1.4. Installing Salt Master on Raspberry Pi
+## 1.4. Changing hostname on Raspberry Pi
+
+Replace the old hostname with ```raspi```
+
+```
+sudo hostnamectl set-hostname raspi
+```
+
+Check that the new hostname was changed
+
+```
+hostname
+```
+
+Edit ```/etc/hosts``` file by adding new hostname ```raspi``` after ```127.0.1.1```
+
+```
+sudo nano /etc/hosts
+```
+
+```
+127.0.0.1       localhost
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+
+127.0.1.1       raspi
+```
+
+Reboot the system
+
+```
+sudo reboot
+```
+
+
+## 1.5. Installing Salt Master on Raspberry Pi
 
 Install Salt Master
 
