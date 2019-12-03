@@ -199,7 +199,7 @@ Allow port 4505 that is responsible for Salt Master
 sudo ufw allow 4505/tcp
 ```
 
-Allow port 4505 that is also responsible for Salt Master
+Allow port 4506 that is also responsible for Salt Master
 
 ```
 sudo ufw allow 4506/tcp
