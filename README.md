@@ -372,6 +372,8 @@ Send a message to all the minions and tell them to return ```True``` to check wh
 sudo salt '*' test.ping
 ```
 
+# 1.6. Creating Salt states on Raspberry Pi
+
 Create ```/srv/salt/``` directory where all the Salt states will 
 
 ```
@@ -384,15 +386,90 @@ Go to ```/srv/salt/``` directory
 cd /srv/salt/
 ```
 
-
-
-```
-sudo nano bastet.sls
-```
+We can create a ```kansio``` example folder using Salt command to ```minion2``` 
 
 ```
-common_packages:
-  pkg.installed:
-    - pkgs:
-      - bastet
+sudo salt 'minion2' cmd.run 'mkdir /home/chief/kansio'
+```
+
+We can create a ```kansio``` example folder using Salt command for all minions, if there were others
+
+```
+sudo salt '*' cmd.run 'mkdir /home/chief/kansio'
+```
+
+We try to create an example Salt state ```vim.sls``` which would install Vim text editor using instructions from https://www.digitalocean.com/community/tutorials/how-to-create-your-first-salt-formula
+
+```
+sudo nano vim.sls
+```
+
+We paste the following text inside ```vim.sls``` file
+
+```
+vim:
+  pkg:
+    - installed
+```
+
+We try to apply the state to ```minion2```
+
+```
+sudo salt 'minion2' state.sls vim
+```
+
+We try to apply the state to all minions
+
+```
+sudo salt '*' state.sls vim
+```
+
+The installation does not work for some reason and the following output appears
+
+```
+minion2:
+----------
+          ID: vim
+    Function: pkg.installed
+      Result: False
+     Comment: An error was encountered while installing package(s): E: The repository 'https://repo.saltstack.com/apt/debian/10/armhf/latest buster Release' does not have a Release file.
+     Started: 16:10:27.350873
+    Duration: 17907.016 ms
+     Changes:   
+
+Summary for minion2
+------------
+Succeeded: 0
+Failed:    1
+------------
+Total states run:     1
+Total run time:  17.907 s
+ERROR: Minions returned with non-zero exit code
+chief@raspi:/srv/salt $ sudo vi
+vi        view      viewres   vigr      vim.tiny  vipw      visudo    
+chief@raspi:/srv/salt $ sudo vi
+vi        view      viewres   vigr      vim.tiny  vipw      visudo    
+chief@raspi:/srv/salt $ sudo vi
+vi        view      viewres   vigr      vim.tiny  vipw      visudo    
+chief@raspi:/srv/salt $ sudo vim vim.sls
+sudo: vim: komentoa ei löytynyt
+chief@raspi:/srv/salt $ sudo salt '*' state.sls vim
+minion2:
+----------
+          ID: vim
+    Function: pkg.installed
+      Result: False
+     Comment: An error was encountered while installing package(s): E: The repository 'https://repo.saltstack.com/apt/debian/10/armhf/latest buster Release' does not have a Release file.
+     Started: 16:13:48.811058
+    Duration: 21524.096 ms
+     Changes:   
+
+Summary for minion2
+------------
+Succeeded: 0
+Failed:    1
+------------
+Total states run:     1
+Total run time:  21.524 s
+ERROR: Minions returned with non-zero exit code
 ```
