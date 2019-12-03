@@ -1,4 +1,4 @@
-# SaltProjectRaspberryPi
+# Salt Project Raspberry Pi
 
 Salt project for Linux Server Management course in Haaga-Helia University of Applied Sciences where we use Raspberry Pi 3 Model B+ as a Salt Master and local Salt Minion
 
@@ -12,7 +12,7 @@ Salt project for Linux Server Management course in Haaga-Helia University of App
 
 # 1. Raspberry Pi
 
-We are using Raspberry Pi 3 Model B+ on this project with Raspbian Buster operating system
+We are using Raspberry Pi 3 Model B+ on this project with ```Raspbian Buster with desktop``` operating system
 
 <img src="http://myy.haaga-helia.fi/~bgg135/kuvat/raspberry.jpg">
 
