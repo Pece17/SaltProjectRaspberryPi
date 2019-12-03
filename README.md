@@ -90,9 +90,31 @@ Syötä uusi arvo tai paina ENTER jättääksesi oletuksen
 Is the information correct? [Y/n]
 ```
 
+Add new user ```chief``` to same groups as ```pi```
+
 ```
 for GROUP in $(groups pi | sed -e 's/^pi //'); do
 sudo adduser chief $GROUP; done
+```
+
+```
+sudo cp /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_chief-nopasswd
+```
+
+```
+sudo chmod u+w /etc/sudoers.d/010_chief-nopasswd
+```
+
+```
+sudo sed -i 's/pi/chief/g' /etc/sudoers.d/010_chief-nopasswd
+```
+
+```
+sudo chmod u-w /etc/sudoers.d/010_chief-nopasswd
+```
+
+```
+sudo reboot
 ```
 
 
