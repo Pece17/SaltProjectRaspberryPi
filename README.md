@@ -51,5 +51,14 @@ SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
 BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
 ```
 
+We use the following command to find out our current dynamic IPv4 (Internet Protocol version 4) and IPv6 (Internet Protocol version 6) addresses, since we can't get static IP addresses in this time range
 
-# 2.
+```
+hostname -I
+```
+
+
+
+
+
+# 2. 
