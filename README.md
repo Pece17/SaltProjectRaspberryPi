@@ -174,3 +174,76 @@ Install Salt Minion
 ```
 sudo apt-get -y install salt-minion
 ```
+
+Install UFW (Uncomplicated Firewall)
+
+```
+sudo apt-get install ufw
+```
+
+Check firewall status
+
+```
+sudo ufw status
+```
+
+Allow port 22 that is responsible for SSH (Secure Shell)
+
+```
+sudo ufw allow 22/tcp
+```
+
+Allow port 80 that is responsible for HTTP (Hypertext Transfer Protocol)
+
+```
+sudo ufw allow 80/tcp
+```
+
+Allow port 443 that is responsible for HTTP over TLS/SSL (Transport Layer Security/Secure Sockets Layer)
+
+```
+sudo ufw allow 443/tcp
+```
+
+Allow port 4505 that is responsible for Salt Master
+
+```
+sudo ufw allow 4505/tcp
+```
+
+Allow port 4505 that is also responsible for Salt Master
+
+```
+sudo ufw allow 4506/tcp
+```
+
+Enable firewall after allowing the desired ports
+
+```
+sudo ufw enable
+```
+
+Check firewall status again
+
+```
+sudo ufw status
+```
+
+Output shows that firewall is not active with previously allowed ports
+
+```
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere                  
+80/tcp                     ALLOW       Anywhere                  
+443/tcp                    ALLOW       Anywhere                  
+4505/tcp                   ALLOW       Anywhere                  
+4506/tcp                   ALLOW       Anywhere                  
+22/tcp (v6)                ALLOW       Anywhere (v6)             
+80/tcp (v6)                ALLOW       Anywhere (v6)             
+443/tcp (v6)               ALLOW       Anywhere (v6)             
+4505/tcp (v6)              ALLOW       Anywhere (v6)             
+4506/tcp (v6)              ALLOW       Anywhere (v6)
+```
