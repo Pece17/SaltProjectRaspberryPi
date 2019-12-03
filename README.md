@@ -161,19 +161,7 @@ sudo rm -vf /etc/sudoers.d/010_pi-nopasswd
 ```
 
 
-## 1.3. Installing Salt Master on Raspberry Pi
-
-Install Salt Master
-
-```
-sudo apt-get -y install salt-master
-```
-
-Install Salt Minion
-
-```
-sudo apt-get -y install salt-minion
-```
+## 1.3. Configuring firewall on Raspberry Pi
 
 Install UFW (Uncomplicated Firewall)
 
@@ -246,4 +234,19 @@ To                         Action      From
 443/tcp (v6)               ALLOW       Anywhere (v6)             
 4505/tcp (v6)              ALLOW       Anywhere (v6)             
 4506/tcp (v6)              ALLOW       Anywhere (v6)
+```
+
+
+## 1.4. Installing Salt Master on Raspberry Pi
+
+Install Salt Master
+
+```
+sudo apt-get -y install salt-master
+```
+
+Install Salt Minion
+
+```
+sudo apt-get -y install salt-minion
 ```
