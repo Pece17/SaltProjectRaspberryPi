@@ -360,7 +360,7 @@ minion2
 Proceed? [n/Y] 
 ```
 
-Send a message to ```minion2``` the minions and tell them to return ```True``` to check which minions are alive
+Send a message to ```minion2``` minion and tell it to return ```True``` to check which minions are alive
 
 ```
 sudo salt 'minion2' test.ping
@@ -370,4 +370,29 @@ Send a message to all the minions and tell them to return ```True``` to check wh
 
 ```
 sudo salt '*' test.ping
+```
+
+Create ```/srv/salt/``` directory where all the Salt states will 
+
+```
+sudo mkdir /srv/salt/
+```
+
+Go to ```/srv/salt/``` directory
+
+```
+cd /srv/salt/
+```
+
+
+
+```
+sudo nano bastet.sls
+```
+
+```
+common_packages:
+  pkg.installed:
+    - pkgs:
+      - bastet
 ```
