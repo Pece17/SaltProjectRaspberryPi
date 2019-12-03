@@ -251,11 +251,13 @@ Check that the new hostname was changed
 hostname
 ```
 
-Edit ```/etc/hosts``` file by adding new hostname ```raspi``` after ```127.0.1.1```
+Edit ```/etc/hosts``` file
 
 ```
 sudo nano /etc/hosts
 ```
+
+Add new hostname ```raspi``` after ```127.0.1.1```
 
 ```
 127.0.0.1       localhost
@@ -285,4 +287,54 @@ Install Salt Minion
 
 ```
 sudo apt-get -y install salt-minion
+```
+
+Edit ```/etc/salt/minion``` file
+
+```
+sudo nano /etc/salt/minion
+```
+
+Change ```# master: salt``` to ```master: localhost``` and remove the hashtag
+
+```
+#### Primary configuration settings #####
+##########################################
+# This configuration file is used to manage the behavior of the Salt Minion.
+# With the exception of the location of the Salt Master Server, values that are
+# commented out but have an empty line after the comment are defaults that need
+# not be set in the config. If there is no blank line after the comment, the
+# value is presented as an example and is not the default.
+
+# Per default the minion will automatically include all config files
+# from minion.d/*.conf (minion.d is a directory in the same directory
+# as the main minion config file).
+#default_include: minion.d/*.conf
+
+# Set the location of the salt master server. If the master server cannot be
+# resolved, then the minion will fail to start.
+master: localhost
+```
+
+Also, change ```# id:``` to ```id: minion2``` and remove the hashtag
+
+```
+# Explicitly declare the id for this minion to use, if left commented the id
+# will be the hostname as returned by the python call: socket.getfqdn()
+# Since salt uses detached ids it is possible to run multiple minions on the
+# same machine but with different ids, this can be useful for salt compute
+# clusters.
+id: minion2
+```
+
+Restart Salt Minion
+
+```
+sudo service salt-minion restart
+```
+
+Restart Salt Master
+
+```
+sudo service salt-master restart
 ```
