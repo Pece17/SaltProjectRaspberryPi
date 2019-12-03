@@ -338,3 +338,28 @@ Restart Salt Master
 ```
 sudo service salt-master restart
 ```
+
+List all public keys
+
+```
+sudo salt-key L
+```
+
+Accept the specified public key for ```minion2```
+
+```
+sudo salt-key -a 'minion2'
+```
+
+The ouput asks to accept the key ```minion2``` for which we press ```Y```
+
+```
+The following keys are going to be accepted:
+Unaccepted Keys:
+minion2
+Proceed? [n/Y] 
+```
+
+```
+sudo salt 'minion2' test.ping
+```
