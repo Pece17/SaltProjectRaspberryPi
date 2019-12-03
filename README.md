@@ -14,7 +14,7 @@ Salt project for Linux Server Management course in Haaga-Helia University of App
 
 We are using Raspberry Pi 3 Model B+ on this project with Raspbian Buster operating system
 
-<img src="http://myy.haaga-helia.fi/~bgg135/kuvat/Raspberry.JPG">
+<img src="http://myy.haaga-helia.fi/~bgg135/kuvat/raspberry.JPG">
 
 
 ## 1.1. Raspberry Pi initialization
