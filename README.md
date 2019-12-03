@@ -360,6 +360,14 @@ minion2
 Proceed? [n/Y] 
 ```
 
+Send a message to ```minion2``` the minions and tell them to return ```True``` to check which minions are alive
+
 ```
 sudo salt 'minion2' test.ping
+```
+
+Send a message to all the minions and tell them to return ```True``` to check which minions are alive
+
+```
+sudo salt '*' test.ping
 ```
