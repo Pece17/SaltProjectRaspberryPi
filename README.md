@@ -118,6 +118,14 @@ sudo reboot
 ```
 
 ```
+logout
+```
+
+```
+su - chief
+```
+
+```
 sudo deluser -remove-home pi
 ```
 
