@@ -10,7 +10,12 @@ Salt project for Linux Server Management course in Haaga-Helia University of App
 - Pekka Hämäläinen
 
 
-# 1. Raspberry Pi initialization
+# 1. Raspberry Pi
+
+We are using Raspberry Pi 3 Model B+ on this project with Raspbian Buster operating system
+
+
+## 1.1. Raspberry Pi initialization
 
 First we formatted the SD card so that we would have a clean slate starting this project
 
@@ -62,6 +67,8 @@ We use the following command to find out our current dynamic IPv4 (Internet Prot
 ```
 hostname -I
 ```
+
+## 1.2. Creating a new user on Raspberry Pi
 
 Create a new user ```chief``` for security reasons, since we don't want to use the default root user ```pi```
 
@@ -158,4 +165,10 @@ sudo rm -vf /etc/sudoers.d/010_pi-nopasswd
 ```
 
 
-# 2. Installing Salt Master
+## 1.3. Installing Salt Master on Raspberry Pi
+
+Install both Salt Master and Salt Minion
+
+```
+sudo apt-get install -y salt-master salt-minion
+```
