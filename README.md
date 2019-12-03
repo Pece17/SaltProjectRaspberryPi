@@ -90,52 +90,72 @@ Syötä uusi arvo tai paina ENTER jättääksesi oletuksen
 Is the information correct? [Y/n]
 ```
 
-Add new user ```chief``` to same groups as ```pi```
+Give user ```chief``` sudo (superuser do) admin privileges
+
+```
+sudo adduser chief sudo
+```
+
+Add new user ```chief``` to same groups as root user ```pi```
 
 ```
 for GROUP in $(groups pi | sed -e 's/^pi //'); do
 sudo adduser chief $GROUP; done
 ```
 
+Add ```nopasswd``` rules to the following directory
+
 ```
 sudo cp /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_chief-nopasswd
 ```
+
+Give the following command related to ```nopasswd``` rules
 
 ```
 sudo chmod u+w /etc/sudoers.d/010_chief-nopasswd
 ```
 
+Give the following command ```nopasswd``` rules
+
 ```
 sudo sed -i 's/pi/chief/g' /etc/sudoers.d/010_chief-nopasswd
 ```
+
+Give the following command ```nopasswd``` rules
 
 ```
 sudo chmod u-w /etc/sudoers.d/010_chief-nopasswd
 ```
 
+Reboot the system 
+
 ```
 sudo reboot
 ```
+
+Logout of root user ```pi```
 
 ```
 logout
 ```
 
+Login as user ```chief```
+
 ```
 su - chief
 ```
+
+Delete root user ```pi```
 
 ```
 sudo deluser -remove-home pi
 ```
 
+Delete ```nopasswd``` rules from root user ```pi```
+
 ```
 sudo rm -vf /etc/sudoers.d/010_pi-nopasswd
 ```
 
-```
-sudo raspi-config
-```
 
-
-# 2. 
+# 2. Installing Salt Master
