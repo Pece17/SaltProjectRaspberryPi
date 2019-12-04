@@ -344,7 +344,7 @@ sudo service salt-master restart
 List all public keys
 
 ```
-sudo salt-key L
+sudo salt-key -L
 ```
 
 Accept the specified public key for ```minion2```
