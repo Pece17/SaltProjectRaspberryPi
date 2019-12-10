@@ -12,7 +12,7 @@ Salt project for Linux Server Management course in Haaga-Helia University of App
 
 # 1. Raspberry Pi
 
-We are using Raspberry Pi 3 Model B+ on this project with ```Raspbian Buster with desktop``` operating system
+We are using ```Raspberry Pi 3 Model B+``` on this project with ```Raspbian Buster with desktop``` operating system
 
 <img src="http://myy.haaga-helia.fi/~bgg135/kuvat/raspberry.jpg">
 
@@ -69,6 +69,7 @@ We use the following command to find out our current dynamic IPv4 (Internet Prot
 ```
 hostname -I
 ```
+
 
 ## 1.2. Creating a new user on Raspberry Pi
 
@@ -373,6 +374,7 @@ Send a message to all the minions and tell them to return ```True``` to check wh
 ```
 sudo salt '*' test.ping
 ```
+
 
 # 1.6. Creating Salt states on Raspberry Pi
 
